@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.app.spaceitemdeliveryapp.ui.custom.SquareGridItem xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="3dp"
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/btnFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_star_empty"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp"
+            android:id="@+id/textCapacityStock"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/textCapacityStock"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp"
+            android:layout_marginTop="2dp"
+            android:id="@+id/textDistance"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            android:id="@+id/textPlanetName"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnTravel"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:text="@string/set_travel"
+            android:textAllCaps="false"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginHorizontal="48dp"
+            android:textSize="14sp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.app.spaceitemdeliveryapp.ui.custom.SquareGridItem>

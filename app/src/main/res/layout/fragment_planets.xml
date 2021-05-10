@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.main.space_travel.ui.planets.PlanetsFragment"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:id="@+id/linearStats">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:id="@+id/textUgs"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:id="@+id/textEus"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textAlignment="textEnd"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:id="@+id/textDs"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintTop_toBottomOf="@id/linearStats"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:id="@+id/dividerTop"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/dividerTop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:id="@+id/linearSpacecraft">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.33"
+        android:maxLines="1"
+        app:autoSizeTextType="uniform"
+        app:autoSizeStepGranularity="1sp"
+        app:autoSizeMaxTextSize="16sp"
+        app:autoSizeMinTextSize="8sp"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:id="@+id/textSpacecraftName"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.33"
+        android:background="@drawable/create_space_point_border"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/labelTitle"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:paddingVertical="4dp"
+        android:paddingHorizontal="16dp"
+        android:layout_marginLeft="16dp"
+        android:id="@+id/textRemainingDurability"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:background="@drawable/create_space_point_border"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/labelTitle"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:paddingVertical="4dp"
+            android:paddingHorizontal="16dp"
+            android:layout_marginLeft="16dp"
+            android:id="@+id/textDurabilityTime"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editSearchPlanet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/linearSpacecraft"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:hint="@string/search"
+        android:inputType="text"
+        android:textColorHint="@color/hintColor"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="16dp"
+        android:background="@drawable/create_space_point_border"
+        app:drawableLeftCompat="@drawable/ic_search"
+        android:drawablePadding="8dp"
+        android:maxLines="1"
+        android:maxLength="96"
+        android:textSize="14sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:autofillHints="false" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/recyclerViewPlanets"
+        app:layout_constraintBottom_toBottomOf="@id/recyclerViewPlanets"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_back"
+        android:id="@+id/btnBackward"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/editSearchPlanet"
+        app:layout_constraintStart_toEndOf="@id/btnBackward"
+        app:layout_constraintEnd_toStartOf="@id/btnForward"
+        android:clipToPadding="false"
+        android:layout_marginTop="48dp"
+        android:layout_marginHorizontal="8dp"
+        android:id="@+id/recyclerViewPlanets"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/recyclerViewPlanets"
+        app:layout_constraintBottom_toBottomOf="@id/recyclerViewPlanets"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_forward"
+        android:id="@+id/btnForward"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:id="@+id/textCurrentPlanetName"
+        app:layout_constraintTop_toBottomOf="@id/recyclerViewPlanets"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
